@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Moment from 'react-moment';
+import 'moment-timezone';
 import './App.css';
+import Avatar from './components/avatar';
+import UserInfo from './components/UserInfo';
+import Comment from './components/comment';
+// import Comment from './components/comment';
 
-function App() {
+function App(props) {
+  const author = {
+    avatarUrl: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+    name: 'marc'
+  }
+  const text = 'lorem ipsum'
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Comment
+        user={author}
+        text={text}
+      />
     </div>
   );
 }
